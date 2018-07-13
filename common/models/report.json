@@ -1,0 +1,44 @@
+{
+  "name": "report",
+  "plural": "reports",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "hours": {
+      "type": "number",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "projectId": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "userId": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
